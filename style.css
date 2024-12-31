@@ -1,0 +1,125 @@
+:root {
+  --primary: #e4002b;
+  --secondary: #00843d;
+  --gold: #ffd700;
+  --snow: #ffffff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1a1b4b 0%, #0a0a2e 100%);
+  overflow: hidden;
+  font-family: 'Arial', sans-serif;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  perspective: 1000px;
+}
+
+.message {
+  text-align: center;
+  color: var(--snow);
+  animation: float 3s ease-in-out infinite;
+  z-index: 2;
+}
+
+.title {
+  font-size: 5rem;
+  font-weight: bold;
+  text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+  margin-bottom: 1rem;
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+.year {
+  font-size: 8rem;
+  font-weight: bold;
+  background: linear-gradient(45deg, var(--gold), var(--primary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 1rem;
+}
+
+.subtitle {
+  font-size: 1.5rem;
+  color: var(--snow);
+  opacity: 0.9;
+}
+
+.snow {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.village {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 30vh;
+  background-image: url('https://assets.codepen.io/1538474/winter-village.png');
+  background-size: cover;
+  background-position: center bottom;
+  transform-origin: bottom;
+  animation: villageParallax 30s linear infinite;
+}
+
+.fireworks {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes glow {
+  from { text-shadow: 0 0 10px var(--gold), 0 0 20px var(--gold), 0 0 30px var(--primary); }
+  to { text-shadow: 0 0 20px var(--gold), 0 0 30px var(--primary), 0 0 40px var(--secondary); }
+}
+
+@keyframes villageParallax {
+  from { background-position: 0 bottom; }
+  to { background-position: -1000px bottom; }
+}
+
+/* Snow animation classes will be added via JavaScript */
+.snowflake {
+  position: absolute;
+  color: var(--snow);
+  font-size: 1em;
+  text-shadow: 0 0 5px #fff;
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 3rem;
+  }
+  .year {
+    font-size: 5rem;
+  }
+  .subtitle {
+    font-size: 1.2rem;
+  }
+}

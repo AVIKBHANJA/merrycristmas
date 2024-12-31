@@ -1,0 +1,128 @@
+.village-scene {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(0deg, #0f2b4d, #000000);
+  overflow: hidden;
+}
+
+.moon {
+  position: absolute;
+  top: 100px;
+  left: 100px;
+  width: 100px;
+  height: 100px;
+  background: #ffd700;
+  border-radius: 50%;
+  box-shadow: 0 0 50px #ffd700;
+}
+
+.mountain {
+  position: absolute;
+  bottom: 0;
+  border-left: 150px solid transparent;
+  border-right: 150px solid transparent;
+  border-bottom: 200px solid #1a1a1a;
+}
+
+.mountain-1 {
+  left: 0;
+}
+
+.mountain-2 {
+  left: 200px;
+  border-bottom-color: #262626;
+}
+
+.mountain-3 {
+  right: 0;
+  border-bottom-color: #333;
+}
+
+.snow-cap {
+  position: absolute;
+  top: -20px;
+  left: -150px;
+  border-left: 150px solid transparent;
+  border-right: 150px solid transparent;
+  border-bottom: 40px solid #fff;
+}
+
+.tree {
+  position: absolute;
+  bottom: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.tree-top {
+  width: 0;
+  height: 0;
+  border-left: 25px solid transparent;
+  border-right: 25px solid transparent;
+  border-bottom: 50px solid #0a5c2f;
+  position: relative;
+}
+
+.tree-top::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, #ffeb3b 1px, transparent 2px) 0 0 / 10px 10px;
+  opacity: 0.6;
+  animation: twinkle 1.5s infinite alternate;
+}
+
+.tree-trunk {
+  width: 10px;
+  height: 20px;
+  background: #4d2b1f;
+}
+
+.house {
+  position: absolute;
+  bottom: 50px;
+  width: 100px;
+  height: 80px;
+  background: #7e5539;
+}
+
+.roof {
+  position: absolute;
+  top: -30px;
+  width: 0;
+  height: 0;
+  border-left: 50px solid transparent;
+  border-right: 50px solid transparent;
+  border-bottom: 40px solid #9c6644;
+}
+
+.window {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: #ffd700;
+  box-shadow: 0 0 10px #ffd700;
+  animation: windowGlow 2s infinite alternate;
+}
+
+.star {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: #fff;
+  border-radius: 50%;
+  animation: twinkle 1.5s infinite alternate;
+}
+
+@keyframes twinkle {
+  from { opacity: 0.2; }
+  to { opacity: 1; }
+}
+
+@keyframes windowGlow {
+  from { box-shadow: 0 0 10px #ffd700; }
+  to { box-shadow: 0 0 20px #ffd700; }
+}
